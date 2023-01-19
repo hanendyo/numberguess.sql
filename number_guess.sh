@@ -28,3 +28,29 @@ typeset -i GAME_PLAYED_UPDATE=$GAME_PLAYED_RESULT
 typeset -i BEST_GAME_UPDATE=0
 
 echo "Guess the secret number between 1 and 1000:"
+
+while [[ $GUESS != $RANDOM_NUMBER  ]]
+do  
+  BEST_GAME_UPDATE=BEST_GAME_UPDATE+1
+  read GUESS
+  if [[ ! $GUESS =~ ^[0-9]+$ ]]
+  then
+    echo "That is not an integer, guess again:"
+  elif [[ $GUESS < $RANDOM_NUMBER ]]; 
+  then
+    echo "It's lower than that, guess again:"
+  elif [[ $GUESS > $RANDOM_NUMBER ]]; 
+  then
+    echo "It's higher than that, guess again:"
+  elif [[ $GUESS = $RANDOM_NUMBER ]]; 
+  then
+    GAME_PLAYED_UPDATE=GAME_PLAYED_UPDATE+1
+
+    if [[ -z $BEST_GAME_RESULT ]]
+    then
+      BEST_GAME_RESULT=$BEST_GAME_UPDATE
+    fi
+    if [[ -z $GAME_PLAYED_RESULT ]]
+    then
+      GAME_PLAYED_RESULT=$GAME_PLAYED_UPDATE
+    fi
