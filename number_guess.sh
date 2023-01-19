@@ -22,7 +22,7 @@ else
   done
 fi
 
-echo $RANDOM_NUMBER
+# echo $RANDOM_NUMBER
 
 typeset -i GAME_PLAYED_UPDATE=$GAME_PLAYED_RESULT
 typeset -i BEST_GAME_UPDATE=0
