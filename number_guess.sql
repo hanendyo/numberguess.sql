@@ -90,13 +90,26 @@ ALTER TABLE ONLY public.player ALTER COLUMN player_id SET DEFAULT nextval('publi
 -- Data for Name: player; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.player VALUES (1, 'username', 1, 4);
+INSERT INTO public.player VALUES (3, 'user_1674157867372', 2, 189);
+INSERT INTO public.player VALUES (2, 'user_1674157867373', 5, 133);
+INSERT INTO public.player VALUES (5, 'user_1674157908834', 2, 830);
+INSERT INTO public.player VALUES (4, 'user_1674157908835', 5, 1001);
+INSERT INTO public.player VALUES (7, 'user_1674157919668', 2, 319);
+INSERT INTO public.player VALUES (6, 'user_1674157919669', 5, 169);
+INSERT INTO public.player VALUES (9, 'user_1674157932666', 2, 104);
+INSERT INTO public.player VALUES (8, 'user_1674157932667', 5, 262);
+INSERT INTO public.player VALUES (11, 'user_1674157956944', 2, 452);
+INSERT INTO public.player VALUES (10, 'user_1674157956945', 5, 155);
+INSERT INTO public.player VALUES (13, 'user_1674158052907', 2, 447);
+INSERT INTO public.player VALUES (12, 'user_1674158052908', 5, 614);
 
 
 --
 -- Name: player_player_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.player_player_id_seq', 1, false);
+SELECT pg_catalog.setval('public.player_player_id_seq', 13, true);
 
 
 --
