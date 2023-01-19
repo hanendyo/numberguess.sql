@@ -54,3 +54,15 @@ do
     then
       GAME_PLAYED_RESULT=$GAME_PLAYED_UPDATE
     fi
+    if [[ $BEST_GAME_UPDATE < $BEST_GAME_RESULT ]]
+      then
+        INSERT_GAME_RESULT=$($PSQL "UPDATE player SET game_played = $GAME_PLAYED_UPDATE, best_game = $BEST_GAME_UPDATE WHERE LOWER(username)=LOWER('$USERNAME')")
+      elif [[ $BEST_GAME_UPDATE > $BEST_GAME_RESULT ]]
+      then
+        INSERT_GAME_RESULT=$($PSQL "UPDATE player SET game_played = $GAME_PLAYED_UPDATE, best_game = $BEST_GAME_RESULT WHERE LOWER(username)=LOWER('$USERNAME')")
+      else
+        INSERT_GAME_RESULT=$($PSQL "UPDATE player SET game_played = $GAME_PLAYED_UPDATE, best_game = $BEST_GAME_UPDATE WHERE LOWER(username)=LOWER('$USERNAME')")
+      fi
+      echo "You guessed it in $BEST_GAME_UPDATE tries. The secret number was $RANDOM_NUMBER. Nice job!"
+    fi
+  done
