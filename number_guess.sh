@@ -21,3 +21,10 @@ else
     echo "Welcome back, $USERNAME_RESULT! You have played $GAME_PLAYED_RESULT games, and your best game took $BEST_GAME_RESULT guesses."
   done
 fi
+
+echo $RANDOM_NUMBER
+
+typeset -i GAME_PLAYED_UPDATE=$GAME_PLAYED_RESULT
+typeset -i BEST_GAME_UPDATE=0
+
+echo "Guess the secret number between 1 and 1000:"
